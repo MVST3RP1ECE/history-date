@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+$color: rgba(66, 86, 122, 1);
+$color-red: rgba(239,93,168,1);
+$color-blue: rgba(56,119,238,1);
+$main-border: 1px solid rgba(66, 86, 122, 0.1);
+$opacity10: 0.1;
+$lin-gradient: linear-gradient(to bottom, $color-blue 0%, $color-red 100%);
+
+.app {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  .main_section {
+    font-family: "PT Sans";
+    position: relative;
+    width: 1440px;
+    height: inherit;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: $main-border;
+    border-left: $main-border;
+
+    .slider_section{
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 180px;
+      padding-left: 70px;
+      top:780px;
+      left: 0px;
+      z-index: 10;
+
+      .slider_info{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        h4, p{
+          text-align: start;
+        }
+      }
+
+      .swiper{
+        display: flex; 
+          width: 100%;
+          height: 100%;
+        
+          .swiper-button-next {
+            right: var(--swiper-navigation-sides-offset, 10px);
+            display: block;
+            left: auto;
+            &::after{
+              content: "";
+              position: absolute;
+              display: flex;
+              width: 20px;
+              height: 20px;
+              left: 5px;
+              top: 15px;
+              background-image: url(https://cdn.icon-icons.com/icons2/685/PNG/512/right_icon-icons.com_61212.png);
+              background-position: center;
+              background-size: cover;
+            }
+          }
+          .swiper-button-prev{
+            left: var(--swiper-navigation-sides-offset, 10px);
+            display: block;
+            left: auto;
+            &::after{
+              content: "";
+              position: absolute;
+              display: flex;
+              width: 20px;
+              height: 20px;
+              left: 13px;
+              top: 15px;
+              rotate: 180deg;
+              background-image: url(https://cdn.icon-icons.com/icons2/685/PNG/512/right_icon-icons.com_61212.png);
+              background-position: center;
+              background-size: cover;
+            }
+          }
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          overflow: hidden;
+        
+          /* Center slide text vertically */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+      }
+      .slider_info{
+        width: 60%;
+        font-size: 20px;
+        font-weight: 400;
+        h4{
+          color: $color-blue;
+          font-size: 25px;
+          font-weight: 400;
+        }
+      }
+    }
+    .controller_wrapper{
+      height: 88px;
+      width: 120px;
+
+      position: absolute;
+      left: 70px;
+      top: 666px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      z-index: 10;
+
+      .controller_buttons{
+        width: 120px;
+        display: flex;
+        justify-content: space-between;
+
+      button{
+        width: 50px;
+        position: relative;
+        background-color: transparent;
+        height: 50px;
+        border: 1px solid rgba(66, 86, 122, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .btn_left::before{
+          content: "";
+          position: absolute;
+          display: flex;
+
+          width: 20px;
+          height: 20px;
+
+          left: 13px;
+          top: 15px;
+          rotate: 180deg;
+
+          background-image: url("https://cdn.icon-icons.com/icons2/685/PNG/512/right_icon-icons.com_61212.png");
+
+          background-position: center; background-size: cover;
+      }
+
+      .btn_right::before {
+          content: "";
+          position: absolute;
+          display: flex;
+
+          width: 20px;
+          height: 20px;
+
+          left: 15px;
+          top: 15px;
+
+          background-image: url("https://cdn.icon-icons.com/icons2/685/PNG/512/right_icon-icons.com_61212.png");
+
+          background-position: center; background-size: cover;
+      }}
+    }
+  }
+    .circle_wrapper{
+      position: relative;
+      display: flex;
+      width: 530px;
+      height: 530px;
+      border: $main-border;
+      border-radius: 50%;
+      z-index: 1;
+        .point{
+          position: absolute;
+          width: 7px; 
+          height: 7px;
+          border-radius: 50%;
+          button{
+            background-color: black;
+            cursor: pointer;
+          }
+        }
+        svg {
+        width: 100%;
+        height: 100%;
+
+        circle{
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .lineX{
+      position: absolute;
+
+      width: 100%;
+      height: 1px;
+      border: $main-border;
+    }
+    .lineY{
+      position: absolute;
+
+      width: 1px;
+      height: 100%;
+      border: $main-border;
+    }
+
+    .date_container{
+      width: 980px;
+      position: absolute;
+      justify-content: space-between;
+      display: flex;
+      font-size: 200px;
+      line-height: 160px;
+      font-weight: 700;
+      z-index: 11;
+
+      .date_from{
+        color: $color-blue;
+      }
+      .date_to{
+        color: $color-red;
+      }
+    }
+
+    .history_dates-container{
+      height: 120px;
+      width: 420px;
+      position: absolute;
+      top: 170px;
+      left: 0px;
+      display: flex;
+      justify-content: space-between;
+      
+
+      line-height: normal;
+      align-items: center;
+
+      .gradient_el{
+        height: 100%;
+        width: 5px;
+
+        background-image: $lin-gradient;
+      }
+      
+    }
+    .dates{
+      width: 353px;
+      height: 134px;
+
+      span{
+        font-weight: 700;
+        font-size: 56px;
+        color: $color;
+        line-height: 67px;
+      }
+    }
+}
